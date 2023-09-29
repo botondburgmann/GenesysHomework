@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   
-  const [charachters, setCharachters] = useState<any>()
+  const [characters, setcharacters] = useState<any>()
 
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
@@ -13,7 +13,7 @@ function App() {
       return res.json()
     })
     .then(data => {
-      setCharachters(data.results);
+      setcharacters(data.results);
     })
   
   
@@ -24,8 +24,8 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={charachters && <Home charachters={charachters}/>} />
-          <Route path="/profile/:id" element={charachters && <Profile/>} />
+          <Route path="/" element={characters && <Home characters={characters}/>} />
+          <Route path="/profile/:id" element={characters && <Profile characters={characters}/>} />
         </Routes>
       </div>
     </Router>
