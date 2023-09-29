@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Home from "./components/Home";
 
 
 function App() {
@@ -15,11 +16,13 @@ function App() {
     })
   
   
-  }, [])
+  }, [charachters])
   
 
   return (
-    <p>Hello</p>
+    <div>
+      {charachters && <Home charachters={charachters}/>}
+    </div>
   )
 }
 
