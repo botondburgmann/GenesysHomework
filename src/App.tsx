@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Home from "./components/Home";
-
+import Profile from "./components/Profile";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   
@@ -16,13 +17,18 @@ function App() {
     })
   
   
-  }, [charachters])
+  }, [])
   
 
   return (
-    <div>
-      {charachters && <Home charachters={charachters}/>}
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={charachters && <Home charachters={charachters}/>} />
+          <Route path="/profile/:id" element={charachters && <Profile/>} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
