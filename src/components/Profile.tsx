@@ -18,7 +18,7 @@ function Profile() {
 
   return (
     <div>
-      <Link to="/">Back to the homepage</Link>
+      <Link to='/'>Back to the homepage</Link>
       {character && 
       <article>
         <h2>{character.name}</h2>
