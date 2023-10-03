@@ -30,8 +30,10 @@ function Home() {
 
   return (
   <>
-    Search:
-    <input value={query} onChange={e => setQuery(e.target.value) } type="search" />
+    <div id="search-bar">
+      Search:
+      <input id="input" value={query} onChange={e => setQuery(e.target.value) } type="search" />
+    </div>
     <table>
       <thead>
         <tr>
